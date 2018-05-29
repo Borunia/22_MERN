@@ -34,14 +34,6 @@ export default (
       }}
     />
     <Route
-      path="/posts/:slug-:cuid"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
-        });
-      }}
-    />
-    <Route
       path="/home"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
@@ -49,13 +41,21 @@ export default (
         });
       }}
     />
-  <Route
-     path="/about"
-     getComponent={(nextState, cb) => {
-       require.ensure([], require => {
-         cb(null, require('./modules/About/About').default);
-       });
-     }}
-   />
-   </Route>
+    <Route
+      path="/about"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/About/About').default);
+        });
+      }}
+    />
+    <Route
+      path="/posts/:slug-:cuid"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
+        });
+      }}
+    />
+  </Route>
 );

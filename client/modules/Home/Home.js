@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// Import Style
+
+
 class Home extends Component {
   render() {
     return (
@@ -12,4 +15,18 @@ class Home extends Component {
   }
 }
 
-export default Home;  
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+Home.propTypes = {
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

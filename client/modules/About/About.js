@@ -2,12 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// Import Style
+
 class About extends Component {
   render() {
     return (
       <div>
-       <h2>About!</h2>
-     </div>
+        <h2>About!</h2>
+      </div>
     );
   }
 }

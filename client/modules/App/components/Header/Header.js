@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
-import Nav from '../Nav/Nav';
+import Navig from '../Navig/Navig';
 
 // Import Style
 import styles from './Header.css';
@@ -14,9 +14,8 @@ export function Header(props, context) {
   return (
     <div className={styles.header}>
       <div className={styles['language-switcher']}>
-
+        <Navig />
         <ul>
-          <li><Nav /></li>
           <li><FormattedMessage id="switchLanguage" /></li>
           {languageNodes}
         </ul>
