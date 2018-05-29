@@ -1,9 +1,9 @@
 export default {
   locale: 'en',
   messages: {
-    editPost: 'Edit Post',
     siteTitle: 'MERN Starter Blog',
     addPost: 'Add Post',
+    editPost: 'Edit Post',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',

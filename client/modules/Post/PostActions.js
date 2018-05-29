@@ -46,6 +46,25 @@ export function fetchPost(cuid) {
     return callApi(`posts/${cuid}`).then(res => dispatch(addPost(res.post)));
   };
 }
+export function editPost(cuid, post) {
+    return {
+      type: 'EDIT_POST',
+      cuid,
+      post
+    };
+};
+
+export function editPostRequest(cuid, post){
+  return (dispatch) => {
+    return callApi('posts/${cuid}', 'put', {
+      post: {
+        name: post.name,
+        title: post.title,
+        content: post.content
+      }
+    }).then(() => dispatch(editPost(cuid,post)));
+  };
+}
 
 export function deletePost(cuid) {
   return {
@@ -57,17 +76,5 @@ export function deletePost(cuid) {
 export function deletePostRequest(cuid) {
   return (dispatch) => {
     return callApi(`posts/${cuid}`, 'delete').then(() => dispatch(deletePost(cuid)));
-  };
-}
-
-export function editPostRequest(cuid, post) {
-  return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'put', {
-      post: {
-        name: post.name,
-        title: post.title,
-        content: post.content,
-      },
-    }).then(() => dispatch(editPost(cuid, post)));
   };
 }
